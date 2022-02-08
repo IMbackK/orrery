@@ -621,7 +621,6 @@ void readInElements(char *dataDir)
     fileHandle = fopen(fileName, "r");
     if (fileName == NULL) {
       perror(fileName);
-      exit(ERROR_EXIT);
     }
     nRead = fscanf(fileHandle, "%lf %lf %lf %lf %lf %lf",
 		   &(element[i].a[0]), &(element[i].e[0]), &(element[i].I[0]),
@@ -629,7 +628,6 @@ void readInElements(char *dataDir)
     if (nRead != 6) {
       fprintf(stderr, "Wrong number (%d) of numbers found on line 1 of %s\n",
 	      nRead, fileName);
-      exit(ERROR_EXIT);
     }
     nRead = fscanf(fileHandle, "%lf %lf %lf %lf %lf %lf",
 		   &(element[i].dadt[0]), &(element[i].dedt[0]), &(element[i].dIdt[0]),
@@ -637,7 +635,6 @@ void readInElements(char *dataDir)
     if (nRead != 6) {
       fprintf(stderr, "Wrong number (%d) of numbers found on line 2 of %s\n",
 	      nRead, fileName);
-      exit(ERROR_EXIT);
     }
     nRead = fscanf(fileHandle, "%lf %lf %lf %lf %lf %lf",
 		   &(element[i].a[1]), &(element[i].e[1]), &(element[i].I[1]),
@@ -645,7 +642,6 @@ void readInElements(char *dataDir)
     if (nRead != 6) {
       fprintf(stderr, "Wrong number (%d) of numbers found on line 3 of %s\n",
 	      nRead, fileName);
-      exit(ERROR_EXIT);
     }
     nRead = fscanf(fileHandle, "%lf %lf %lf %lf %lf %lf",
 		   &(element[i].dadt[1]), &(element[i].dedt[1]), &(element[i].dIdt[1]),
@@ -653,14 +649,12 @@ void readInElements(char *dataDir)
     if (nRead != 6) {
       fprintf(stderr, "Wrong number (%d) of numbers found on line 4 of %s\n",
 	      nRead, fileName);
-      exit(ERROR_EXIT);
     }
     nRead = fscanf(fileHandle, "%lf %lf %lf %lf",
 		   &(element[i].b), &(element[i].c), &(element[i]).s, &(element[i].f));
     if (nRead != 4) {
       fprintf(stderr, "Wrong number (%d) of numbers found on line 5 of %s\n",
 	      nRead, fileName);
-      exit(ERROR_EXIT);
     }
     fclose(fileHandle);
   }

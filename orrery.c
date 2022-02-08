@@ -5285,7 +5285,7 @@ static void drawOptsScreens(void)
       renderPangoText(scratchString, OR_CREAM, BIG_PANGO_FONT, &tWidth, &tHeight,
 		      pixmap, displayWidth >> 1, 21, 0.0, TRUE, 0);
       for (day = 0; day < 7; day++) {
-	sprintf(scratchString, dayName[day]);
+	sprintf(scratchString, "%s", dayName[day]);
 	gdk_draw_string(pixmap, smallFont, gC[OR_BLUE],
 			CAL_DAY_WIDTH/2 + day*CAL_DAY_WIDTH + CAL_LEFT_OFFSET -
 			gdk_string_width(smallFont, scratchString)/2,

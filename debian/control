@@ -1,0 +1,12 @@
+Source: orrery
+Section: user/sicence
+Priority: extra
+Maintainer: Carl Klemm
+Build-Depends: debhelper (>= 10),
+Standards-Version: 4.3.0
+
+Package: orrery
+Architecture: any
+Multi-Arch: same
+Depends: libgles1, ${shlibs:Depends} 
+Description: An open source amateur astronomy app for gnu/linux phones 
